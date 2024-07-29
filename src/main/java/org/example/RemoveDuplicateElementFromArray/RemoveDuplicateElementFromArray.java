@@ -1,36 +1,32 @@
 package org.example.RemoveDuplicateElementFromArray;
+
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+
 public class RemoveDuplicateElementFromArray {
     public static void main(String[] args) {
         System.out.println("/***************************************************/");
         System.out.println("-----------  Remove Duplicate Element from Array ----------");
         System.out.println("/***************************************************/");
 
-        //solution :1 - with Set
-//        int[] numbers ={2,1,6,4,6,7,8,9,10,3};
-//        Set<Integer> myNumbers = new HashSet<>();
-//        for (int number : numbers) {
-//            myNumbers.add(number);
-//        }
-//        System.out.println(myNumbers);
 
+        int[] array = {1, 2, 2, 3, 4, 4, 5, 6, 6};
+        int[] result = removeDuplicates(array);
+        System.out.println(Arrays.toString(result));
+    }
 
-        //solution :1 - with Set
-        int[] naturalNumbers ={0,2,1,6,4,6,7,8,9,10,3};
-        int result = 0;
-        int[] finalArray = new int[naturalNumbers.length];
-        for(int i=0; i<naturalNumbers.length; i++){
-            if(naturalNumbers[i]>result){
-                finalArray[i]= naturalNumbers[i];
+    public static int[] removeDuplicates(int[] array) {
+        int[] tempArray = new int[array.length];
+        int j = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] != array[i + 1]) {
+                tempArray[j++] = array[i];
             }
         }
-        System.out.println(Arrays.toString(finalArray));
 
-// third solution
-        int[] numbersArray = {0,2,1,6,4,6,7,8,9,10,3};
-        Arrays.stream(numbersArray).sorted().distinct().toArray();
-        System.out.println(Arrays.toString(numbersArray));
+        tempArray[j++] = array[array.length - 1];
+        int[] result = new int[j];
+        System.arraycopy(tempArray, 0, result, 0, j);
+        return result;
     }
+
 }
