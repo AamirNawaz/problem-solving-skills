@@ -8,6 +8,7 @@ public class BubbleSort {
         System.out.println("*********** Bubble Sort ****************");
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
+// In Bubble sort - sorting start from Highest to lowest element in the array.
         int[] numbers = {6,9,7,3,8,5,2,1,4,10};
         for (int i =0; i< numbers.length -1; i++){
             for(int j =0; j <numbers.length -1-i; j++){
