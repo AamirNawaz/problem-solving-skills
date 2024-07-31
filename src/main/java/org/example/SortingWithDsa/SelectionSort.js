@@ -1,14 +1,14 @@
-// In selection sort - sorting start from smallest to highist element in the array.
+// In selection sort - sorting start from smallest to highest element in the array.
 const selectionSort = (numbers) => {
   for (let i = 0; i < numbers.length - 1; i++) {
-    let smallest = i;
+    let minIndex = i;
     for (let j = i + 1; j < numbers.length; j++) {
-      if (numbers[smallest] > numbers[j]) {
-        smallest = j;
+      if (numbers[minIndex] > numbers[j]) {
+        minIndex = j;
       }
     }
-    let temp = numbers[smallest];
-    numbers[smallest] = numbers[i];
+    let temp = numbers[minIndex];
+    numbers[minIndex] = numbers[i];
     numbers[i] = temp;
   }
   return numbers;
