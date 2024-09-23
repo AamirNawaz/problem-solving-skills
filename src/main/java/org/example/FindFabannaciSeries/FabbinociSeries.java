@@ -6,13 +6,13 @@ public class FabbinociSeries {
 
         //callig to Fabinnoci function
         for(int i =0; i<15; i++){
-            Fabinnoci(i);
+            System.out.println(Fabinnoci(i));
         }
 
     }
 
-    public static Number Fabinnoci(int num){
-        if(num <1){
+    public static int Fabinnoci(int num){
+        if(num <=1){
             return num;
         }else{
             return (Fabinnoci(num-1) + Fabinnoci(num -2));
